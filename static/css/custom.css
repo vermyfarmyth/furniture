@@ -1,0 +1,94 @@
+﻿:root {
+  --bg: #f4f2ec;
+  --surface: #ffffff;
+  --text: #1f2a30;
+  --accent: #2f7f5f;
+  --accent-2: #c3a36a;
+}
+
+html[data-theme='dark'] {
+  --bg: #1f2427;
+  --surface: #2b3236;
+  --text: #edf1f3;
+  --accent: #56b188;
+  --accent-2: #e2bd7f;
+}
+
+body { background: radial-gradient(circle at top right, rgba(195,163,106,.2), transparent 40%), var(--bg); color: var(--text); }
+body, p, h1, h2, h3, h4, h5, h6, li, label, span { color: var(--text); }
+a { color: var(--accent); }
+a:hover { color: var(--accent-2); }
+.page-shell { min-height: 72vh; }
+.hero-block { background: linear-gradient(120deg, #eaf6ef, #fff2da); animation: fadeUp .7s ease; }
+.stat-box { background: var(--surface); border-radius: 12px; padding: 14px; text-align: center; box-shadow: 0 8px 22px rgba(0,0,0,.06); transition: transform .2s; }
+.stat-box:hover { transform: translateY(-4px) scale(1.02); }
+.product-card { transition: transform .25s, box-shadow .25s; overflow: hidden; }
+.product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 30px rgba(0,0,0,.13); }
+.product-card .card-img-top { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.product-card img { transition: transform .3s; }
+.product-card:hover img { transform: scale(1.05); }
+.nav-link.active { color: var(--accent) !important; border-bottom: 2px solid var(--accent); }
+.btn-success { background: var(--accent); border-color: var(--accent); }
+.btn-success:hover { filter: brightness(1.08); }
+.alert { animation: fadeIn .3s ease; }
+input:focus, select:focus, textarea:focus, button:focus, a:focus { outline: 3px solid rgba(47,127,95,.35); outline-offset: 2px; }
+.modal-lite { position: fixed; inset: 0; background: rgba(0,0,0,.45); display: none; align-items: center; justify-content: center; }
+.modal-lite.open { display: flex; }
+.modal-content-lite { background: var(--surface); padding: 1rem; border-radius: 12px; max-width: 480px; width: 92%; }
+.badge-pulse { animation: pulse 1.8s infinite; }
+.skeleton { background: linear-gradient(90deg, #efefef 30%, #f8f8f8 50%, #efefef 70%); background-size: 300% 100%; animation: shimmer 1.2s infinite; }
+.toast-lite { position: fixed; right: 16px; bottom: 16px; background: var(--accent); color: #fff; padding: .7rem 1rem; border-radius: 8px; transform: translateY(30px); opacity: 0; transition: .25s; }
+.toast-lite.show { transform: translateY(0); opacity: 1; }
+
+html[data-theme='dark'] .navbar,
+html[data-theme='dark'] .card,
+html[data-theme='dark'] .list-group-item,
+html[data-theme='dark'] .table,
+html[data-theme='dark'] .breadcrumb,
+html[data-theme='dark'] .form-control,
+html[data-theme='dark'] .form-select,
+html[data-theme='dark'] .dropdown-menu {
+  background-color: var(--surface) !important;
+  color: var(--text) !important;
+}
+
+html[data-theme='dark'] .nav-link,
+html[data-theme='dark'] .card-title,
+html[data-theme='dark'] .card-text,
+html[data-theme='dark'] .table th,
+html[data-theme='dark'] .table td,
+html[data-theme='dark'] .breadcrumb-item,
+html[data-theme='dark'] .form-label,
+html[data-theme='dark'] .btn-outline-secondary {
+  color: var(--text) !important;
+}
+
+html[data-theme='dark'] .text-muted,
+html[data-theme='dark'] .small.text-muted {
+  color: #b6c1c7 !important;
+}
+
+html[data-theme='dark'] .navbar {
+  border-bottom: 1px solid #3a4348;
+}
+
+html[data-theme='dark'] .hero-block {
+  background: linear-gradient(120deg, #2e3a3d, #263034);
+}
+
+html[data-theme='dark'] .form-control,
+html[data-theme='dark'] .form-select {
+  border-color: #4b585f;
+}
+
+html[data-theme='dark'] .form-control::placeholder {
+  color: #9eaab0;
+}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px);} to { opacity:1; transform: translateY(0);} }
+@keyframes fadeIn { from { opacity: 0;} to { opacity: 1;} }
+@keyframes pulse { 0%,100% { transform: scale(1);} 50% { transform: scale(1.04);} }
+@keyframes shimmer { to { background-position: -300% 0; } }
+
+@media (max-width: 991px) { .hero-block { padding: 2rem 1.2rem; } }
+@media (max-width: 767px) { .display-5 { font-size: 2rem; } }
+@media (max-width: 576px) { .stat-box { font-size: .9rem; } }
